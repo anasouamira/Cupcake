@@ -133,8 +133,13 @@ fun CupcakeApp(
 
                 SelectOptionScreen(
                     subtotal = uiState.price,
-                    options = DataSource.flavors.map {id -> context.resources.getString(id)}
+                    options = DataSource.flavors.map {id -> context.resources.getString(id)},
+                    onSelectionChanged = {viewModel.setFlavor(it)},
+                    modifier = Modifier.fillMaxHeight()
                 )
+            }
+            composable(route = CupcakeScreen.Pickup.name){
+
             }
         }
 
